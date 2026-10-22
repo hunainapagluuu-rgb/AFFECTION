@@ -737,6 +737,22 @@
 
 
 /* ---------- page forty-nine: aap meri zindagi mein sirf aayi nahi, bas gayi hain ---------- */
+/* ---------- Page 50: the details I keep ---------- */
+.page-fifty{padding-top:12px;}
+.page50-shell{position:relative;max-width:920px;margin:0 auto;padding:clamp(24px,5vw,54px);border:1px solid rgba(146,83,95,.19);border-radius:24px;background:linear-gradient(155deg,rgba(255,252,249,.98),rgba(250,240,237,.82));box-shadow:0 18px 48px rgba(65,34,42,.08),inset 0 1px 0 rgba(255,255,255,.85);overflow:hidden;}
+.page50-shell:before{content:"";position:absolute;inset:12px;border:1px solid rgba(146,83,95,.10);border-radius:17px;pointer-events:none;}
+.page50-kicker{position:relative;margin:0 0 13px;text-align:center;text-transform:uppercase;letter-spacing:.22em;font:10px/1.6 sans-serif;color:var(--wine);opacity:.78;}
+.page50-title{position:relative;max-width:760px;margin:0 auto 28px;text-align:center;font:clamp(30px,4.5vw,46px)/1.2 'Cormorant Garamond',serif;color:var(--wine);font-weight:500;}
+.page50-divider{display:flex;align-items:center;justify-content:center;gap:13px;margin:0 auto 31px;color:var(--wine);opacity:.72;font-size:13px;}
+.page50-divider:before,.page50-divider:after{content:"";width:46px;height:1px;background:linear-gradient(90deg,transparent,rgba(146,83,95,.55));}
+.page50-divider:after{transform:scaleX(-1);}
+.page50-letter{position:relative;max-width:760px;margin:0 auto;}
+.page50-letter p{margin:0 0 20px;font:clamp(17px,2vw,19px)/1.95 'Cormorant Garamond',serif;color:var(--ink);text-align:left;}
+.page50-letter p:last-child{margin-bottom:0;}
+.page50-letter .page50-emphasis{margin:27px auto;text-align:center;color:var(--wine);font-style:italic;font-size:clamp(20px,2.5vw,24px);line-height:1.75;}
+.page50-closing{margin:29px auto 0;padding-top:22px;border-top:1px solid rgba(146,83,95,.17);text-align:center;font:italic clamp(19px,2.4vw,23px)/1.7 'Cormorant Garamond',serif;color:var(--wine);}
+@media(max-width:560px){.page50-shell{padding:31px 24px;border-radius:19px}.page50-shell:before{inset:8px;border-radius:13px}.page50-letter p{line-height:1.82;margin-bottom:18px}.page50-title{margin-bottom:23px}}
+
 .page-forty-nine{padding-top:12px;}
 .page49-title{font-size:clamp(29px,4vw,41px);line-height:1.25;text-align:center;margin:0 auto 26px;color:var(--wine);max-width:850px;}
 .page49-letter{max-width:900px;margin:0 auto;padding:clamp(20px,4vw,42px);border:1px solid rgba(146,83,95,.18);border-radius:22px;background:linear-gradient(160deg,rgba(255,250,248,.92),rgba(250,239,237,.65));box-shadow:0 14px 36px rgba(81,34,45,.07);}
@@ -746,6 +762,25 @@
 .page49-letter .page49-emphasis{color:var(--wine);text-align:center;font-style:italic;margin:28px 0;font-size:20px;line-height:1.85;}
 .page49-letter .page49-signoff{color:var(--wine);text-align:center;font-style:italic;margin-top:30px;}
 @media(max-width:600px){.page49-title{font-size:29px;margin-bottom:19px}.page49-letter{padding:21px 17px;border-radius:16px}.page49-letter p{font-size:16.5px;line-height:1.85;margin-bottom:18px}.page49-letter .page49-opening{font-size:19px}.page49-letter .page49-emphasis{font-size:18px;margin:23px 0}}
+
+
+/* ---------- Faasla — editorial botanical stationery ---------- */
+.faasla-page-wrap{width:min(calc(100% - 34px),510px);margin:30px auto 48px;perspective:1200px;}
+.faasla-paper{--paper-r:11px;position:relative;isolation:isolate;box-sizing:border-box;width:100%;min-height:clamp(570px,112vw,690px);padding:clamp(82px,15vw,112px) clamp(40px,10vw,58px);overflow:visible;border-radius:var(--paper-r);background:radial-gradient(ellipse at 50% 16%,rgba(255,255,255,.98) 0%,rgba(255,254,250,.9) 36%,transparent 75%),linear-gradient(128deg,#fffefa 0%,#faf7ef 47%,#fffdf8 100%);box-shadow:0 1px 0 #d8d0c4,0 3px 0 #fffdf8,0 4px 0 #e5ddd0,0 7px 0 #f8f4ec,0 22px 44px rgba(31,25,21,.17),inset 0 0 0 1px rgba(115,91,69,.15);transform-style:preserve-3d;transform:rotateX(0) rotateY(0);transition:transform .24s ease,box-shadow .24s ease;}
+.faasla-paper:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.18'/%3E%3C/svg%3E");mix-blend-mode:multiply;}
+.faasla-paper:after{content:"";position:absolute;inset:7px;border:1px solid rgba(161,126,104,.13);border-radius:calc(var(--paper-r) - 3px);pointer-events:none;z-index:1;}
+.faasla-botanical{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:2;transform:translateZ(3px);}
+.faasla-content{position:relative;z-index:3;max-width:360px;margin:0 auto;text-align:center;color:#303e32;transform:translateZ(7px);}
+.faasla-eyebrow{font:500 9px/1.4 'Cormorant Garamond',Georgia,serif;letter-spacing:.27em;text-transform:uppercase;color:#8b7868;margin:0 0 18px;}
+.faasla-title{font-family:'Allura','Cormorant Garamond',cursive;font-size:clamp(48px,9vw,66px);line-height:1;font-weight:400;letter-spacing:.01em;color:#a85d70;margin:0 0 15px;text-shadow:0 1px 0 rgba(255,255,255,.9);}
+.faasla-divider{display:flex;align-items:center;justify-content:center;gap:12px;color:#b66d7c;margin:0 auto 28px;font-size:13px;}
+.faasla-divider:before,.faasla-divider:after{content:"";width:36px;height:1px;background:linear-gradient(90deg,transparent,rgba(166,98,114,.72));}.faasla-divider:after{transform:scaleX(-1)}
+.faasla-poem{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(18px,3.8vw,22px);font-weight:500;line-height:1.66;letter-spacing:.003em;margin:0;color:#354337;text-wrap:pretty;}
+.faasla-stanza{margin:0 0 25px}.faasla-stanza:last-child{margin-bottom:0}
+.faasla-page-marker{margin-top:34px!important}
+@media(hover:hover) and (pointer:fine){.faasla-paper:hover{box-shadow:0 1px 0 #d8d0c4,0 3px 0 #fffdf8,0 4px 0 #e5ddd0,0 7px 0 #f8f4ec,0 27px 48px rgba(31,25,21,.2),inset 0 0 0 1px rgba(115,91,69,.15)}}
+@media(max-width:420px){.faasla-page-wrap{width:calc(100% - 28px);margin:22px auto 34px}.faasla-paper{min-height:570px;padding:83px 30px 70px;--paper-r:9px}.faasla-content{max-width:290px}.faasla-eyebrow{font-size:8px;margin-bottom:15px}.faasla-title{font-size:49px;margin-bottom:13px}.faasla-divider{margin-bottom:24px}.faasla-poem{font-size:17.5px;line-height:1.68}.faasla-stanza{margin-bottom:22px}}
+@media(prefers-reduced-motion:reduce){.faasla-paper{transition:none!important}}
 
 </style>
 </head>
@@ -804,6 +839,109 @@
 </div>
 </section>
 
+<div class="page-marker page50-marker"><span>page fifty</span></div>
+<section class="page-two-wrap page-fifty" id="page50" aria-labelledby="page50-title">
+  <article class="page50-shell">
+    <p class="page50-kicker">for the little things I never want to forget</p>
+    <h2 class="page50-title" id="page50-title">Woh Chhoti Chhoti Baatein</h2>
+    <div class="page50-divider" aria-hidden="true">✦</div>
+    <div class="page50-letter">
+      <p>Rahin, aapko pata hai, main aapko sirf un badi badi baaton ke liye nahi chahta jo aapko khud bhi apne andar nazar aati hongi. Main aapko un chhoti chhoti baaton ke liye bhi chahta hoon jinhein shayad aap khud kabhi khaas samajhti hi nahi.</p>
+      <p>Aapka baat karte karte achanak chup ho jaana, kisi baat ko lekar zyada sochne lagna, apni pareshaniyon ke beech bhi meri fikr karna, aur kabhi khud pareshaan hote hue bhi mujhe sambhalne ki koshish karna. Aapki yeh saari baatein mere dil mein kahin mehfooz hain. Shayad main har baar aapko bata nahi paata, lekin main inhein mehsoos karta hoon.</p>
+      <p>Mujhe aapki sirf woh muskurahat nahi chahiye jo tasveeron mein achhi lagti hai. Mujhe woh muskurahat bhi chahiye jo kisi mushkil din ke baad waapas aaye. Main sirf aapke khush hone ke waqt aapke paas nahi rehna chahta. Main chahta hoon ke jab aapko khud samajh na aaye ke aapko kya pareshaan kar raha hai, tab bhi aapko mere saath apni baat kehne ke liye sahi alfaaz dhoondhne ki zaroorat na pade.</p>
+      <p>Aur suniyega, aapko mere saamne har waqt achha ban kar rehne ki zaroorat nahi hai. Aap thak sakti hain, pareshaan ho sakti hain, khamosh reh sakti hain, kisi baat par mujhse naraaz bhi ho sakti hain. Main aapko sirf aapke sabse khoobsurat lamhon mein nahi dekhna chahta. Main aapko insaan ki tarah, aapki har kaifiyat ke saath samajhna chahta hoon.</p>
+      <p>Kabhi kabhi main sochta hoon ke agar Allah ne humein ek din saath zindagi guzaarne ka mauqa diya, toh shayad hamari sabse khoobsurat yaadein koi bahut badi cheez nahi hongi. Shayad woh aam se din honge. Aapka mujhe kisi chhoti si baat par bulana, mera aapki baat sunte hue muskura dena, kisi din bina kisi wajah ke aapka haath thaam lena, aur raat ko yeh sukoon hona ke ab humein ek doosre se door reh kar baat khatam nahi karni padegi.</p>
+      <p>Main chahta hoon ke waqt guzarta rahe, hum dono badalte rahein, hamari zindagi mein zimmedariyan aayein, aur duniya humein pehle se zyada masroof kar de. Lekin in sab ke beech main aapki woh chhoti chhoti baatein yaad rakhun jo mujhe aaj aapse itni mohabbat karwati hain. Main chahta hoon ke saalon baad bhi main aapko dekhoon aur mere dil mein wahi ehsaas aaye ke dekhiye, yeh wahi insaan hain jinse baat karna mere din ka sabse pyaara hissa hua karta tha.</p>
+      <p>Aapko har roz meri mohabbat ka koi bada saboot nahi chahiye hona chahiye. Main chahta hoon ke meri mohabbat aapko mere bartao mein nazar aaye, mere sabr mein, aapki baat sunne ke tareeqe mein, aapki izzat karne mein, aur un dino mein bhi jab mohabbat ka izhaar karne se zyada ek doosre ko samajhna zaroori ho.</p>
+      <p>Aur agar kabhi aapko lage ke aap mein bahut si kamiyaan hain, toh ek baat yaad rakhiyega: main aapko isliye nahi chahta ke aap har tarah se perfect hain. Main aapko isliye chahta hoon kyunki aap aap hain. Aapko meri mohabbat ke laayak banne ke liye apne aap ko badal kar koi aur banne ki zaroorat nahi. Haan, hum dono behtar banenge, apni ghaltiyon se seekhenge, aur ek doosre ko samajhne ki koshish karenge. Lekin aapki apni pehchaan, aapke khwaab aur aapka dil mere liye hamesha ahmiyat rakhenge.</p>
+      <p>Rahin, main nahi jaanta ke aane wale saalon mein hamari zindagi humein kitne imtihaan dikhayegi. Main bas itna jaanta hoon ke agar Allah ne humein ek doosre ke naseeb mein rakha, toh main chahta hoon ke aapko mere saath sirf mohabbat hi nahi, sukoon bhi mile. Aisi jagah jahan aapko suna jaaye, jahan aapki izzat ho, jahan aap apne khwaab poore kar sakein, aur jahan aapko baar baar yeh mehsoos karne ke liye na tarasna pade ke aap kisi ke liye kitni khaas hain.</p>
+      <p class="page50-emphasis">Kyunki meri jaan, main aapki zindagi ka sirf ek khoobsurat hissa nahi banna chahta. Main chahta hoon ke agar hum saath chalein, toh main un chhoti chhoti khushiyon ka bhi hissa banu jinhein yaad karke aap saalon baad muskura dein.</p>
+      <p>Aur jab kabhi aap mujhse poochhein ke main aapse itni mohabbat kyun karta hoon, toh shayad main har baar koi naya jawaab na de paaun.</p>
+      <p class="page50-closing">Lekin mere dil ka jawaab wahi rahega.<br><strong>Aap hain, Rahin. Bas aap. Aur mere liye yeh baat kabhi chhoti nahi hogi.</strong></p>
+    </div>
+  </article>
+</section>
+
+<div class="page-marker faasla-page-marker"><span>Faasla</span></div>
+<section class="faasla-page-wrap" id="faasla-page" aria-labelledby="faasla-title">
+  <article class="faasla-paper" data-faasla-paper>
+    <svg class="faasla-botanical" data-faasla-botanical aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 510 650">
+      <defs>
+        <linearGradient id="faaslaStem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#29482f"/><stop offset=".28" stop-color="#78916b"/><stop offset=".56" stop-color="#486a45"/><stop offset=".8" stop-color="#8b9c6e"/><stop offset="1" stop-color="#2e4b32"/></linearGradient>
+        <linearGradient id="faaslaLeaf" x1="0" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#a9b889"/><stop offset=".4" stop-color="#607d53"/><stop offset="1" stop-color="#304d35"/></linearGradient>
+        <linearGradient id="faaslaPetal" x1="0" y1="0" x2="1" y2=".25"><stop offset="0" stop-color="#f9d6d3"/><stop offset=".26" stop-color="#efacb5"/><stop offset=".62" stop-color="#dc8195"/><stop offset="1" stop-color="#b95370"/></linearGradient>
+        <linearGradient id="faaslaPetalLight" x1="0" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#fff0e9"/><stop offset=".35" stop-color="#f4b8bd"/><stop offset="1" stop-color="#d16d85"/></linearGradient>
+        <linearGradient id="faaslaPetalDark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1b3bd"/><stop offset=".5" stop-color="#d7758c"/><stop offset="1" stop-color="#a94361"/></linearGradient>
+        <linearGradient id="faaslaStemLight" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#345537"/><stop offset=".48" stop-color="#9aaa7b"/><stop offset="1" stop-color="#345237"/></linearGradient>
+        <filter id="faaslaFlowerShadow" x="-45%" y="-45%" width="190%" height="190%"><feDropShadow dx="1.2" dy="2.4" stdDeviation="1.7" flood-color="#46342c" flood-opacity=".22"/></filter>
+      </defs>
+      <g data-vine-group></g>
+      <g data-flower-group filter="url(#faaslaFlowerShadow)"></g>
+    </svg>
+    <div class="faasla-content">
+      <p class="faasla-eyebrow">a little page for you</p>
+      <h2 class="faasla-title" id="faasla-title">Faasla</h2>
+      <div class="faasla-divider" aria-hidden="true">✦</div>
+      <div class="faasla-poem">
+        <p class="faasla-stanza">Faasla sirf raaston ka nahi hota,<br>kabhi kabhi dil ke darmiyan bhi<br>bahut kuch reh jaata hai.</p>
+        <p class="faasla-stanza">Magar aap ka khayal,<br>har manzil par mere saath chalta hai,<br>chahe main kitni bhi door hoon.</p>
+        <p class="faasla-stanza">Aap mere liye sirf ek manzil nahi,<br>ek aisa ehsaas hain<br>jo har jagah mere saath rehta hai.</p>
+      </div>
+    </div>
+  </article>
+</section>
+<script>
+(()=>{
+  const paper=document.querySelector('[data-faasla-paper]');
+  const svg=document.querySelector('[data-faasla-botanical]');
+  if(!paper||!svg) return;
+  const vineGroup=svg.querySelector('[data-vine-group]');
+  const flowerGroup=svg.querySelector('[data-flower-group]');
+  const NS='http://www.w3.org/2000/svg';
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const el=(tag,attrs,parent)=>{const n=document.createElementNS(NS,tag);Object.entries(attrs||{}).forEach(([k,v])=>n.setAttribute(k,v));if(parent)parent.appendChild(n);return n;};
+  function flower(x,y,angle=0,bud=false,scale=1){
+    const g=el('g',{transform:`translate(${x} ${y}) rotate(${angle}) scale(${scale})`},flowerGroup);
+    // A fine curved stalk grows inward from the edge and meets the flower's calyx.
+    el('path',{d:bud?'M0 23 Q-2 13 0 5':'M0 31 Q-2 19 0 8',fill:'none',stroke:'url(#faaslaStemLight)','stroke-width':2.1,'stroke-linecap':'round'},g);
+    el('path',{d:bud?'M-1 19 Q-11 15 -10 8 Q-2 11 -1 19Z':'M-1 25 Q-12 19 -11 10 Q-2 14 -1 25Z',fill:'url(#faaslaLeaf)',stroke:'#486746','stroke-width':.45},g);
+    el('path',{d:bud?'M1 21 Q10 17 10 11 Q3 13 1 21Z':'M1 28 Q12 21 11 13 Q3 17 1 28Z',fill:'url(#faaslaLeaf)',stroke:'#486746','stroke-width':.45},g);
+    if(bud){
+      el('path',{d:'M-7 8 Q-9 -1 -2 -10 Q0 -12 2 -10 Q9 -2 7 8 Q0 12 -7 8Z',fill:'url(#faaslaPetal)',stroke:'#c66a80','stroke-width':.55},g);
+      el('path',{d:'M0 7 Q-2 -1 0 -9 Q5 -2 4 7Z',fill:'url(#faaslaPetalLight)',opacity:.88},g);
+      el('path',{d:'M-3 -5 Q-1 -8 0 -8',fill:'none',stroke:'rgba(255,255,255,.85)','stroke-width':.8,'stroke-linecap':'round'},g);
+    }else{
+      // Individually layered petal silhouettes create a softly sculpted tulip cup.
+      el('path',{d:'M-12 8 Q-17 0 -10 -12 Q-7 -16 -4 -8 L-2 7Z',fill:'url(#faaslaPetalDark)',stroke:'#c86b82','stroke-width':.5},g);
+      el('path',{d:'M-8 7 Q-10 -8 -2 -17 Q2 -19 3 -9 L4 8Z',fill:'url(#faaslaPetalLight)',stroke:'#e6a0ac','stroke-width':.45},g);
+      el('path',{d:'M-3 8 Q-1 -5 5 -15 Q9 -17 10 -7 L8 8Z',fill:'url(#faaslaPetal)',stroke:'#c76b82','stroke-width':.5},g);
+      el('path',{d:'M3 8 Q8 -3 13 -7 Q17 -8 15 1 L10 9Z',fill:'url(#faaslaPetalDark)',stroke:'#b85a73','stroke-width':.45},g);
+      el('path',{d:'M-8 -9 Q-7 -13 -4 -14',fill:'none',stroke:'rgba(255,255,255,.8)','stroke-width':1,'stroke-linecap':'round'},g);
+      el('path',{d:'M0 -12 Q1 -15 3 -15',fill:'none',stroke:'rgba(255,255,255,.7)','stroke-width':.8,'stroke-linecap':'round'},g);
+      el('path',{d:'M-9 8 Q0 12 10 8 L7 12 Q0 15 -7 12Z',fill:'url(#faaslaStem)',stroke:'#496846','stroke-width':.4},g);
+    }
+    return g;
+  }
+  function draw(){
+    const w=paper.clientWidth,h=paper.clientHeight,r=Math.min(parseFloat(getComputedStyle(paper).getPropertyValue('--paper-r'))||10, w*.04, h*.025);
+    svg.setAttribute('viewBox',`0 0 ${w} ${h}`);svg.setAttribute('width',w);svg.setAttribute('height',h);
+    vineGroup.replaceChildren();flowerGroup.replaceChildren();
+    // Path is calculated from the live paper box and its real corner radius, not viewport coordinates.
+    const inset=2.3, x0=inset,y0=inset,x1=w-inset,y1=h-inset,rr=Math.max(4,r-inset*.35);
+    const d=`M ${x0+rr} ${y0} H ${x1-rr} Q ${x1} ${y0} ${x1} ${y0+rr} V ${y1-rr} Q ${x1} ${y1} ${x1-rr} ${y1} H ${x0+rr} Q ${x0} ${y1} ${x0} ${y1-rr} V ${y0+rr} Q ${x0} ${y0} ${x0+rr} ${y0} Z`;
+    el('path',{d,fill:'none',stroke:'rgba(35,54,34,.18)','stroke-width':5.2,'stroke-linejoin':'round','stroke-linecap':'round',transform:'translate(1.2 1.8)'},vineGroup);
+    el('path',{d,fill:'none',stroke:'url(#faaslaStem)','stroke-width':3.25,'stroke-linejoin':'round','stroke-linecap':'round'},vineGroup);
+    el('path',{d:`M ${x0+rr+5} ${y0+1.4} H ${x1-rr-5} Q ${x1-4} ${y0+1.4} ${x1-4} ${y0+rr+4} V ${y1-rr-4} Q ${x1-4} ${y1-4} ${x1-rr-5} ${y1-4} H ${x0+rr+5} Q ${x0+4} ${y1-4} ${x0+4} ${y1-rr-4} V ${y0+rr+4} Q ${x0+4} ${y0+1.4} ${x0+rr+5} ${y0+1.4}`,fill:'none',stroke:'rgba(220,231,187,.68)','stroke-width':.75,'stroke-linejoin':'round','stroke-linecap':'round'},vineGroup);
+    // Restrained, edge-attached leaves. Their anchors sit on the same perimeter path.
+    const leaf=(x,y,rot)=>el('path',{d:'M0 0 Q-11 -10 -17 -2 Q-10 8 0 0Z',transform:`translate(${x} ${y}) rotate(${rot})`,fill:'url(#faaslaLeaf)',stroke:'#486746','stroke-width':.6},vineGroup);
+    leaf(w*.22,y0+1,-8);leaf(w*.72,y0+1,188);leaf(x1-1,h*.31,92);leaf(x1-1,h*.69,98);leaf(w*.76,y1-1,12);leaf(w*.27,y1-1,190);leaf(x0+1,h*.7,-88);leaf(x0+1,h*.34,-90);
+    // Tulip stems meet the vine itself; flower placement is recalculated with each resize.
+    flower(w*.15,y0+8, -8,false,.82);flower(w*.82,h*.24, 12,false,.88);flower(x1-8,h*.52, 90,true,.9);flower(w*.84,y1-8, 165,false,.82);flower(w*.18,y1-8, 190,true,.9);flower(x0+8,h*.73,-92,false,.78);flower(w*.53,y0+8,5,true,.72);
+  }
+  let resizeTimer=0;const resizeObserver=new ResizeObserver(()=>{cancelAnimationFrame(resizeTimer);resizeTimer=requestAnimationFrame(draw);});resizeObserver.observe(paper);draw();
+  if(!reduced&&window.matchMedia('(hover:hover) and (pointer:fine)').matches){let raf=0;paper.addEventListener('pointermove',e=>{const r=paper.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>paper.style.transform=`rotateX(${-y*1.25}deg) rotateY(${x*1.5}deg)`);},{passive:true});paper.addEventListener('pointerleave',()=>{cancelAnimationFrame(raf);paper.style.transform='rotateX(0deg) rotateY(0deg)';},{passive:true});}
+})();
+</script>
 
 <div class="page-marker page49-marker"><span>page forty-nine</span></div>
 <section class="page-two-wrap page-forty-nine" aria-labelledby="page49-title" id="page49">
