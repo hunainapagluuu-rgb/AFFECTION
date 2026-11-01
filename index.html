@@ -827,6 +827,17 @@
 @media(prefers-reduced-motion:reduce){.faasla-paper{transition:none!important}}
 
 
+
+/* ---------- Page 54: If You Could Borrow My Heart ---------- */
+.page-fifty-four{padding-top:12px;}
+.page54-shell{max-width:940px;}
+.page54-letter{font-size:clamp(16px,1.35vw,18px);line-height:1.92;}
+.page54-letter p{margin:0 0 1.08em;}
+.page54-poem{margin:25px auto 29px;padding:16px 20px;max-width:760px;text-align:center;border-left:2px solid rgba(146,83,95,.35);border-right:2px solid rgba(146,83,95,.35);background:rgba(255,255,255,.42);border-radius:12px;color:var(--wine);font-family:'Cormorant Garamond',serif;font-size:clamp(19px,2vw,23px);line-height:1.68;font-style:italic;}
+.page54-kicker{text-align:center;letter-spacing:.18em;text-transform:uppercase;font-size:10px;color:var(--gold);margin:0 0 13px;}
+.page54-closing{text-align:center;margin:30px auto!important;color:var(--wine);font-family:'Cormorant Garamond',serif;font-size:clamp(21px,2.5vw,28px);line-height:1.65;font-style:italic;}
+@media(max-width:520px){.page54-letter{font-size:16px;line-height:1.85}.page54-poem{padding:14px 13px;margin:21px auto 24px}.page54-shell{padding-left:23px;padding-right:23px}}
+
 /* ---------- Page 53: everyday care and future partnership ---------- */
 .page-fifty-three{padding-top:12px;}
 .page53-shell{max-width:940px;}
@@ -836,6 +847,60 @@
 .page53-emphasis{text-align:center;margin:28px 0!important;padding:18px 12px;color:var(--wine);font-family:'Cormorant Garamond',serif;font-size:clamp(21px,2.5vw,28px);line-height:1.5;}
 .page53-closing-english{text-align:center;margin:30px auto!important;color:var(--wine);font-family:'Cormorant Garamond',serif;font-size:clamp(21px,2.5vw,27px);line-height:1.5;}
 @media(max-width:520px){.page53-shell{padding:30px 23px 34px;border-radius:19px;}.page53-letter{font-size:16px;line-height:1.82;}.page53-poem{margin:21px auto 24px;padding:14px 10px;font-size:19px;line-height:1.58;}.page53-emphasis{font-size:23px;}.page53-closing-english{font-size:22px;}}
+
+/* ================= PREMIUM READER EXPERIENCE ================= */
+:root{--aff-ivory:#f5eedf;--aff-wine:#642432;--aff-rose:#b87983;--aff-gold:#a98449;--aff-ink:#30251f;--aff-shadow:0 18px 55px rgba(48,28,24,.16)}
+html{scroll-padding-top:84px}
+body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility }
+button,a{ -webkit-tap-highlight-color:transparent }
+button:focus-visible,a:focus-visible,textarea:focus-visible{outline:2px solid var(--aff-gold);outline-offset:4px}
+/* A restrained, persistent reader dock */
+.affection-reader-dock{position:fixed;z-index:80;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;align-items:center;gap:3px;padding:7px 9px;border:1px solid rgba(169,132,73,.34);border-radius:18px;background:rgba(35,25,25,.91);box-shadow:0 12px 38px rgba(0,0,0,.24);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#f7eddf;max-width:calc(100vw - 20px)}
+.affection-reader-dock button{position:relative;min-width:43px;min-height:43px;padding:5px 7px;border:0;border-radius:12px;background:transparent;color:#f7eddf;font:500 14px 'Cormorant Garamond',serif;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;transition:background .2s ease,color .2s ease}
+.affection-reader-dock button:hover,.affection-reader-dock button[aria-pressed="true"]{background:rgba(201,160,111,.18);color:#e8c994}
+.affection-reader-dock small{font:10px/1.1 'Cormorant Garamond',serif;letter-spacing:.04em}
+.affection-reader-dock b{position:absolute;top:1px;right:1px;min-width:15px;height:15px;padding:0 3px;border-radius:20px;background:#b87983;color:white;font:10px/15px Arial,sans-serif}
+body{padding-bottom:76px}
+/* Reading focus: paper and words become the only visual priority */
+body.reader-focus .chapter-nav,body.reader-focus .ribbon,body.reader-focus .music-toggle,body.reader-focus .reading-tools,body.reader-focus .affection-reader-dock{opacity:.18;transition:opacity .25s ease}
+body.reader-focus .chapter-nav:hover,body.reader-focus .ribbon:hover,body.reader-focus .affection-reader-dock:hover{opacity:1}
+body.reader-focus .page-two-wrap,body.reader-focus .preface-wrap{filter:none}
+body.reader-focus .page-two-wrap p,body.reader-focus .page-two-wrap .verse-quote,body.reader-focus .page-two-wrap .page54-poem{font-size:calc(1em * var(--reader-scale,1));line-height:1.95}
+/* Editorial consistency and chapter-family accents */
+.page-two-wrap{--chapter-accent:var(--wine);scroll-margin-top:28px}
+.page-two-wrap[data-chapter-type="poetry"]{--chapter-accent:#8a5962}
+.page-two-wrap[data-chapter-type="promise"]{--chapter-accent:#8b7048}
+.page-two-wrap[data-chapter-type="memory"]{--chapter-accent:#7b5b68}
+.page-two-wrap[data-chapter-type="future"]{--chapter-accent:#64756c}
+.page-two-wrap .page-title,.page-two-wrap h2{ text-wrap:balance }
+.page-two-wrap .page-title::selection,.page-two-wrap h2::selection{background:rgba(184,121,131,.22)}
+.page-two-wrap .page52-divider{color:var(--chapter-accent,var(--aff-gold))}
+/* Save actions are quiet until needed */
+.affection-page-actions{display:flex;justify-content:flex-end;margin:0 auto 12px;max-width:760px;padding:0 4px}
+.affection-save-page,.affection-save-line{border:1px solid rgba(132,94,61,.25);border-radius:999px;background:rgba(255,252,245,.72);color:#72534b;padding:8px 13px;font:500 13px 'Cormorant Garamond',serif;letter-spacing:.02em;cursor:pointer;transition:all .2s ease}
+.affection-save-page:hover,.affection-save-line:hover,.affection-save-page[aria-pressed="true"],.affection-save-line[aria-pressed="true"]{background:#6d2937;color:#fff4e9;border-color:#6d2937}
+.affection-save-line{display:block;margin:8px auto 0;font-size:12px;padding:5px 11px}
+.verse-quote,.page54-poem,.page52-sher,.refrain{position:relative}
+/* Saved words panel */
+.affection-saved-panel[hidden]{display:none}
+.affection-saved-panel{position:fixed;inset:0;z-index:120;display:grid;place-items:center;padding:18px}
+.affection-panel-backdrop{position:absolute;inset:0;background:rgba(20,14,15,.72);backdrop-filter:blur(8px)}
+.affection-panel-card{position:relative;width:min(620px,100%);max-height:min(82vh,760px);overflow:auto;padding:34px clamp(20px,5vw,44px);border:1px solid rgba(169,132,73,.4);border-radius:20px;background:linear-gradient(145deg,#fbf6eb,#eee1ca);box-shadow:0 25px 90px rgba(0,0,0,.35);color:#35251f}
+.affection-panel-close{position:absolute;top:12px;right:16px;border:0;background:transparent;color:#69424a;font-size:28px;cursor:pointer}
+.affection-panel-kicker{text-transform:uppercase;letter-spacing:.19em;font:11px Arial,sans-serif;color:#9b7652}
+.affection-panel-card h2{margin:8px 0;color:#642432;font:500 clamp(28px,6vw,42px) 'Cormorant Garamond',serif}
+.affection-panel-intro,.affection-panel-foot{color:#7a6658;font:15px/1.6 'Cormorant Garamond',serif}
+.affection-saved-list{display:grid;gap:12px;margin:22px 0}
+.affection-saved-item{padding:15px 16px;border-left:2px solid #b58a55;background:rgba(255,255,255,.48);font:17px/1.65 'Cormorant Garamond',serif;white-space:pre-line}
+.affection-saved-item small{display:block;margin-top:7px;color:#96765d;font:10px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.affection-saved-empty{padding:24px;text-align:center;color:#876f62;font:italic 17px 'Cormorant Garamond',serif}
+.affection-saved-remove{margin-top:8px;border:0;background:none;color:#8b5962;text-decoration:underline;font:12px 'Cormorant Garamond',serif;cursor:pointer}
+.affection-toast{position:fixed;z-index:130;left:50%;bottom:88px;transform:translate(-50%,12px);max-width:calc(100vw - 32px);padding:11px 17px;border:1px solid rgba(207,177,126,.35);border-radius:999px;background:rgba(42,29,29,.94);color:#fff4e9;font:14px 'Cormorant Garamond',serif;box-shadow:0 8px 28px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;text-align:center}
+.affection-toast.is-visible{opacity:1;transform:translate(-50%,0)}
+/* Keep interactions usable on tablets and compact phones */
+@media(max-width:600px){.affection-reader-dock{gap:0;padding:5px 6px;border-radius:15px}.affection-reader-dock button{min-width:39px;min-height:41px;padding:4px}.affection-reader-dock small{font-size:9px}.affection-panel-card{padding-top:30px}.affection-save-page{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.affection-reader-dock *, .affection-toast,.affection-save-page,.affection-save-line{transition:none!important;scroll-behavior:auto!important}}
+
 </style>
 </head>
 <body><nav aria-label="Book navigation" class="chapter-nav">
@@ -874,6 +939,27 @@
   <button type="button" id="replayReading">Replay</button>
 </div>
 <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false" aria-label="Play background music">♫ Play our little soundtrack</button>
+<div class="affection-reader-dock" id="affectionReaderDock" aria-label="Book tools">
+  <button type="button" id="readerFocusToggle" aria-pressed="false" title="Distraction-free reading"><span aria-hidden="true">◖</span><small>Focus</small></button>
+  <button type="button" id="fontDown" title="Smaller text" aria-label="Smaller text">A−</button>
+  <button type="button" id="fontUp" title="Larger text" aria-label="Larger text">A+</button>
+  <button type="button" id="savedWordsOpen" title="Words I want to keep"><span aria-hidden="true">♡</span><small>Saved</small><b id="savedWordsCount">0</b></button>
+  <button type="button" id="randomPage" title="Open a random page"><span aria-hidden="true">✧</span><small>Surprise</small></button>
+  <button type="button" id="resumeReading" title="Return to where you left off"><span aria-hidden="true">↶</span><small>Resume</small></button>
+</div>
+<div class="affection-saved-panel" id="savedWordsPanel" role="dialog" aria-modal="true" aria-labelledby="savedWordsTitle" hidden>
+  <div class="affection-panel-backdrop" data-close-saved></div>
+  <section class="affection-panel-card">
+    <button class="affection-panel-close" type="button" data-close-saved aria-label="Close saved words">×</button>
+    <p class="affection-panel-kicker">a little collection, just for her</p>
+    <h2 id="savedWordsTitle">Words I Want to Keep</h2>
+    <p class="affection-panel-intro">The lines and pages you choose to carry with you.</p>
+    <div id="savedWordsList" class="affection-saved-list"></div>
+    <p class="affection-panel-foot">Saved privately on this device.</p>
+  </section>
+</div>
+<div class="affection-toast" id="affectionToast" role="status" aria-live="polite"></div>
+
 <audio id="bookMusic" preload="none" loop src="assets/audio/our-song.mp3"></audio>
 <section class="preface-wrap">
 <div class="note-card">
@@ -893,6 +979,77 @@
 </div>
 </section>
 
+
+<div class="page-marker page54-marker"><span>page fifty-four</span></div>
+<section class="page-two-wrap page-fifty-four" id="page54" aria-labelledby="page54-title">
+  <article class="page52-shell page54-shell">
+    <p class="page54-kicker">a little wish from the deepest part of my heart</p>
+    <h2 class="page52-title" id="page54-title">If You Could Borrow My Heart</h2>
+    <div class="page52-divider" aria-hidden="true">✦</div>
+    <div class="page52-letter page54-letter">
+      <p><strong>Rahin,</strong> ek ajeeb si khwahish hai meri.</p>
+      <p>Kabhi kabhi dil karta hai ki kaash ek din ke liye aap meri jagah ho jaayein. Aap meri aankhon se dekhein, mere dil se mehsoos karein, aur meri jagah khade hokar khud ko dekhein.</p>
+      <p>Main chahta hoon ki aapko ek baar bhi meri tarah apne aap se mohabbat mehsoos ho.</p>
+      <p>Because I genuinely don't think you realise what you are to me.</p>
+      <p>Aap shayad roz khud ko dekhti hongi. Kabhi mirror mein, kabhi pictures mein, kabhi apni mistakes mein, kabhi un cheezon mein jo aapko apne andar pasand nahi. Shayad kuch din aapko khud se shikayatein bhi hoti hongi. Kabhi lagta hoga ki aap achhi nahi lag rahi, kabhi ki aapne kuch theek nahi kiya, kabhi ki aapko aur better hona chahiye tha.</p>
+      <p>Kaash main un saari nazron ke beech apni nazar rakh paata.</p>
+      <p>Kaash aap ek baar dekh paati ki jis insaan ko aap kabhi kabhi itni aasaani se judge kar leti hain, usi insaan ko dekh kar mera dil kitni baar khamoshi se muskura deta hai.</p>
+      <div class="page54-poem">Khud ko dekh kar aap kabhi kabhi udaas ho jaati hain,<br> Aur main aapko dekh kar apni duniya khoobsurat paata hoon.</div>
+      <p>Agar aap meri aankhon se khud ko dekhti, toh sabse pehle shayad aapko apni smile nazar aati. Woh smile jo kabhi kisi chhoti si baat par aa jaati hai. Woh expression jab aap kisi cheez ko lekar excited hoti hain. Woh andaaz jab aap apni baat samjhaane ke liye baar baar wahi cheez kehti hain.</p>
+      <p>Aapko shayad yaad bhi nahi rehta ki aapne kya kaha tha, lekin mujhe kabhi kabhi woh chhoti chhoti baatein yaad reh jaati hain.</p>
+      <p>Aapke liye woh bas ek normal conversation hoti hai. Mere liye woh din ka woh hissa hota hai jise main dobara mehsoos karna chahta hoon.</p>
+      <p>I wish you knew how much happiness you leave behind in my ordinary days.</p>
+      <p>Aapka naam screen par aa jaana, aapka achanak kuch keh dena, aapka apni duniya ki koi chhoti si baat mujhe batana. Yeh sab mere liye itna normal nahi hai jitna shayad aap samajhti hain.</p>
+      <div class="page54-poem">Jin baaton ko aap keh kar bhool jaati hain,<br>Main unhi ko yaadon mein sambhaal kar rakhta hoon.</div>
+      <p>Aur agar aap kuch der aur meri aankhon se dekhti, toh aapko samajh aata ki main sirf aapki khoobsurati ki baat nahi karta.</p>
+      <p><strong>I notice your efforts.</strong></p>
+      <p>Main dekhta hoon jab aap apni responsibilities ke beech mere liye waqt nikaalti hain. Jab aap khud thaki hui hoti hain lekin phir bhi baat karne ki koshish karti hain. Jab aap apni problems ke saath deal kar rahi hoti hain aur phir bhi apne tareeke se apni duniya sambhaalti hain.</p>
+      <p>Ho sakta hai aapko lage ki aap itna kuch nahi kar rahi. Lekin main chahta hoon ki aap kabhi apni koshishon ko chhota mat samajhiye.</p>
+      <p>I don't want you to feel that you have to do something extraordinary to deserve appreciation.</p>
+      <p>Sometimes, just seeing you try makes me proud of you.</p>
+      <p>Aur meri jaan, main chahta hoon ki jis din aapko lage ki aap kuch bhi achha nahi kar paa rahi, us din bhi aapko apni worth yaad rahe.</p>
+      <div class="page54-poem">Thak kar ruk jaana bhi haar nahi hota,<br>Har roz jeetne wala insaan bhi kabhi beqaraar hota hai.</div>
+      <p>Aapko har waqt strong rehne ki zaroorat nahi hai. Mujhe aapka woh version bhi chahiye jo kabhi kabhi bas chup rehna chahta hai. Jo har baat explain nahi kar paata. Jo khud nahi jaanta ki usse kya chahiye. Jo kabhi bina wajah ro deta hai, kabhi overthink karta hai, kabhi apne hi khayalon mein ulajh jaata hai.</p>
+      <p>Aapko mere saamne apne emotions ko beautiful bana kar rakhne ki zaroorat nahi.</p>
+      <p>Aap ro sakti hain. Naraz ho sakti hain. Apni baat keh sakti hain. Kabhi mujhse disagree kar sakti hain. Kabhi bas itna keh sakti hain ki aaj mujhse kuch nahi ho raha.</p>
+      <p>I don't want a version of you that is always easy to understand. I want to keep learning you, even on the days when you don't understand yourself.</p>
+      <p>Aur ek baat jo shayad main kabhi theek se keh nahi paaya...</p>
+      <p>Mujhe aapki sirf woh side nahi pasand jo duniya ko dikhti hai. Mujhe woh Rahin bhi pyaari hain jise shayad sirf kuch log jaante hain. Woh jo kabhi bachchon jaisi ho jaati hain, woh jo chhoti chhoti baaton par khush ho jaati hain, woh jo apni pasand ki cheezon ke baare mein baat karte hue alag hi lagti hain.</p>
+      <p>I wish I could collect every little version of you and show you how each one has a place in my heart.</p>
+      <div class="page54-poem">Na sirf aapki hansi se mohabbat hai mujhe,<br>Aapki khamoshi mein bhi aapki aahat pehchaan leta hoon.</div>
+      <p>Aur agar aap mera dil borrow karke thoda aur aage badhti, toh shayad ek cheez aur samajh aati.</p>
+      <p>You would realise that I never wanted you to compete with anybody.</p>
+      <p>Na kisi aur ladki se. Na kisi perfect picture se. Na apne purane version se. Aur na hi us imaginary version se jo aapko lagta hai ki mujhe pasand aayega.</p>
+      <p>Aapko mere liye apne aap ko badalne ki zaroorat nahi hai.</p>
+      <p>Main nahi chahta ki aap apni pasand chhod dein, apne dreams chhote kar dein, ya apni personality ko meri expectations ke hisaab se dhaal dein. Main chahta hoon ki aap apni zindagi mein itni khush rahein ki kabhi aapko apni khushi maangne mein bhi hesitation na ho.</p>
+      <p>I want to be someone who adds peace to your life, not another person whose expectations you have to carry.</p>
+      <p>Aur agar kabhi aapko lage ki aap enough nahi hain, toh please ek pal ke liye rukiyega.</p>
+      <p>Aapko har din beautiful dikhna zaroori nahi. Har din productive hona zaroori nahi. Har baat ka jawab pata hona zaroori nahi. Aapko har waqt sabke liye available rehna bhi zaroori nahi.</p>
+      <p>Aap insaan hain, Rahin. Aapko bhi rest chahiye, patience chahiye, understanding chahiye, aur kabhi kabhi bina kuch kahe kisi ka saath chahiye.</p>
+      <div class="page54-poem">Har waqt khud ko saabit karna zaroori toh nahi,<br>Aapka hona hi kam hai kya, aapka hona khoobsurat nahi?</div>
+      <p>And then, perhaps, you would reach the part of my heart I find hardest to explain.</p>
+      <p>You would see how much I miss you in moments I never tell you about.</p>
+      <p>Kabhi koi achhi cheez hoti hai aur sabse pehle aapko batane ka khayal aata hai. Kabhi koi random thought aata hai aur lagta hai ki aapko sunana chahiye. Kabhi din itna ordinary hota hai ki bas aapse baat karne ka mann karta hai.</p>
+      <p>And sometimes, when we cannot talk, I realise how many little corners of my day have quietly made space for you.</p>
+      <p>Aap meri zindagi ka har hissa nahi hain, lekin meri zindagi ke bohot saare hisson mein aapki jagah ban chuki hai.</p>
+      <p>I don't know how to explain that without sounding dramatic. But it is true.</p>
+      <div class="page54-poem">Din toh guzar jaata hai aapke bina bhi,<br>Magar kuch hissa mera aapse baat kiye bina adhoora rehta hai.</div>
+      <p>Rahin, agar sach mein ek din ke liye aap mera dil borrow kar paati, toh main chahta hoon ki aap us din koi mirror na dekhein.</p>
+      <p>Kisi picture mein khud ko judge na karein. Kisi aur se apna comparison na karein. Apni kisi kami ko ginne na baith jaayein.</p>
+      <p>Bas meri nazron se khud ko dekhein.</p>
+      <p>Aur jab aap wapas mera dil mujhe lautayein, toh please apne liye thodi si narmi bhi saath le jaiyega.</p>
+      <p>Khud se thoda kam naraz raha kariyega. Apni achievements ko thoda celebrate kiya kariyega. Apni smile ko bina wajah rokna mat. Apne dreams ko kabhi chhota mat samajhna. Aur jab kabhi aapko lage ki duniya mein aapko samajhne wala koi nahi, toh yaad rakhiyega ki aapki baat sunne ke liye main hamesha seekhta rahunga.</p>
+      <p>I cannot promise that I will understand every silence or find the right words every time. But I can promise that your feelings will never be something I want you to hide just to make things easier for me.</p>
+      <p>And one last thing...</p>
+      <p>Agar meri nazron se khud ko dekhne ke baad aapki aankhon mein aansu aa jaayein, toh main chahta hoon woh aansu kisi insecurity ke na hon.</p>
+      <p>Woh is baat ke hon ki aapne aakhirkaar khud ko utni mohabbat se dekha jitni mohabbat aap deserve karti hain.</p>
+      <p class="page54-closing">Aap meri nazron se khud ko dekh paati agar,<br>Toh khud se mohabbat karna seekh jaati aap.</p>
+      <p class="page54-closing">Aur kaash main har baar jab aap khud ko kam samjhein,<br>Aapko apni nazron ka ek chhota sa hissa dikha paun.</p>
+      <p>Because if there is one thing I wish I could give you, beyond all the promises, all the letters, all the pages of this book...</p>
+      <p><strong>It is the ability to see just how lovely it is to be you.</strong></p>
+    </div>
+  </article>
+</section>
 
 <div class="page-marker page53-marker"><span>page fifty-three</span></div>
 <section class="page-two-wrap page-fifty-three" id="page53" aria-labelledby="page53-title">
@@ -5515,5 +5672,81 @@ Bas dil se yeh lage</p>
   if (reopenLetter) reopenLetter.addEventListener('click', () => setLetterOpen(false));
 })();
 </script><script src="daily.js"></script>
+
+<script>
+/* AFFECTION · premium reader layer. All personal saves remain in this browser only. */
+(()=>{
+  const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+  const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  const KEY='affection-reader-v1';
+  let state={saved:[],lastId:'',lastY:0,scale:1};
+  try{state={...state,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){}
+  const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){toast('This browser could not save locally.')}};
+  const toastEl=$('#affectionToast');let toastTimer;
+  function toast(msg){if(!toastEl)return;toastEl.textContent=msg;toastEl.classList.add('is-visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toastEl.classList.remove('is-visible'),2300)}
+  const sections=$$('.page-two-wrap, .preface-wrap, .special-chapter, .final-letter-section');
+  function currentSection(){let chosen=sections[0];const y=scrollY+innerHeight*.36;for(const el of sections){if(el.getBoundingClientRect().top+scrollY<=y)chosen=el;else break}return chosen}
+  function pageTitle(el){return el?.querySelector('h1,h2,h3')?.textContent?.trim()||el?.id||'A page from our book'}
+  // Label chapters by their existing content; no page content or numbering is changed.
+  sections.forEach(el=>{
+    const t=(pageTitle(el)+' '+(el.textContent||'').slice(0,250)).toLowerCase();
+    let kind='letter';if(/sher|poem|poetry|verse|ghazal/.test(t)||el.querySelector('.verse-quote,.page54-poem,.stanza'))kind='poetry';
+    if(/promise|husband|dua|future|zindagi/.test(t))kind='promise';
+    if(/memory|moments|yaad|little things/.test(t))kind='memory';
+    if(/future|dream|2032|kal|aane wali/.test(t))kind='future';
+    el.dataset.chapterType=kind;
+  });
+  function addSaveControl(node,text,type,title){
+    if(node.querySelector(':scope > .affection-save-line'))return;
+    const btn=document.createElement('button');btn.type='button';btn.className=type==='page'?'affection-save-page':'affection-save-line';
+    const id=type+'-'+(node.id||Math.random().toString(36).slice(2));
+    const existing=()=>state.saved.some(x=>x.id===id);
+    const paint=()=>{btn.setAttribute('aria-pressed',String(existing()));btn.textContent=existing()?'♥ Kept close':'♡ Keep this close'};
+    paint();btn.addEventListener('click',()=>{
+      if(existing())state.saved=state.saved.filter(x=>x.id!==id);
+      else state.saved.unshift({id,text,title,kind:type,at:Date.now()});
+      state.saved=state.saved.slice(0,100);persist();paint();renderSaved();toast(existing()?'Removed from your keepsakes.':'Kept close, just for you.');
+    });node.appendChild(btn);
+  }
+  // A discreet bookmark on each readable page.
+  sections.forEach((sec,i)=>{
+    if(sec.classList.contains('reply-section'))return;
+    if(!sec.id)sec.id='affection-section-'+i;
+    const action=document.createElement('div');action.className='affection-page-actions';
+    const b=document.createElement('button');b.type='button';b.className='affection-save-page';const id='page-'+sec.id;
+    const has=()=>state.saved.some(x=>x.id===id);
+    const paint=()=>{b.setAttribute('aria-pressed',String(has()));b.textContent=has()?'♥ Page bookmarked':'♡ Bookmark this page'};
+    paint();b.addEventListener('click',()=>{if(has())state.saved=state.saved.filter(x=>x.id!==id);else state.saved.unshift({id,text:'Return to this page whenever you want.',title:pageTitle(sec),kind:'page',target:sec.id,at:Date.now()});persist();paint();renderSaved();toast(has()?'Bookmark removed.':'Page bookmarked on this device.');});action.appendChild(b);
+    const heading=sec.querySelector('h1,h2');if(heading)heading.parentNode.insertBefore(action,heading.nextSibling);else sec.insertBefore(action,sec.firstChild);
+  });
+  // Make favourite poetic lines savable without altering the line itself.
+  $$('.verse-quote,.page54-poem,.page52-sher,.refrain').forEach((node,i)=>{
+    const text=(node.innerText||node.textContent||'').trim();if(text)addSaveControl(node,text,'line',pageTitle(node.closest('section')));
+  });
+  const panel=$('#savedWordsPanel'),list=$('#savedWordsList'),count=$('#savedWordsCount');
+  function renderSaved(){if(count)count.textContent=state.saved.length;if(!list)return;list.replaceChildren();if(!state.saved.length){const empty=document.createElement('p');empty.className='affection-saved-empty';empty.textContent='Your favourite words will live here. Tap “Keep this close” beneath a line, or bookmark a page.';list.appendChild(empty);return}
+    state.saved.forEach(item=>{const wrap=document.createElement('article');wrap.className='affection-saved-item';const quote=document.createElement('div');quote.textContent=item.text;wrap.appendChild(quote);const meta=document.createElement('small');meta.textContent=(item.kind==='page'?'BOOKMARK · ':'A LINE FROM · ')+(item.title||'AFFECTION');wrap.appendChild(meta);if(item.target){const go=document.createElement('button');go.className='affection-saved-remove';go.textContent='Return to this page';go.addEventListener('click',()=>{panel.hidden=true;$('#'+CSS.escape(item.target))?.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'})});wrap.appendChild(go)}const remove=document.createElement('button');remove.className='affection-saved-remove';remove.textContent='Remove from keepsakes';remove.addEventListener('click',()=>{state.saved=state.saved.filter(x=>x.id!==item.id);persist();renderSaved()});wrap.appendChild(remove);list.appendChild(wrap)})
+  }
+  renderSaved();
+  $('#savedWordsOpen')?.addEventListener('click',()=>{renderSaved();panel.hidden=false;$('.affection-panel-close',panel)?.focus()});
+  $$('[data-close-saved]').forEach(b=>b.addEventListener('click',()=>{panel.hidden=true;$('#savedWordsOpen')?.focus()}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panel&&!panel.hidden)panel.hidden=true});
+  // Focus mode and readable font scaling.
+  const focus=$('#readerFocusToggle');focus?.addEventListener('click',()=>{const on=!document.body.classList.contains('reader-focus');document.body.classList.toggle('reader-focus',on);focus.setAttribute('aria-pressed',String(on));focus.querySelector('small').textContent=on?'Exit':'Focus';toast(on?'Distraction-free reading is on.':'Full book view restored.')});
+  function setScale(v){state.scale=Math.max(.9,Math.min(1.2,v));document.documentElement.style.setProperty('--reader-scale',state.scale);document.body.style.setProperty('--reader-scale',state.scale);persist()}
+  setScale(state.scale||1);$('#fontDown')?.addEventListener('click',()=>setScale((state.scale||1)-.05));$('#fontUp')?.addEventListener('click',()=>setScale((state.scale||1)+.05));
+  // Random letter, avoiding utility sections and the cover.
+  $('#randomPage')?.addEventListener('click',()=>{const candidates=$$('.page-two-wrap[id],.special-chapter[id],.final-letter-section[id]').filter(x=>!['writeBack'].includes(x.id));if(!candidates.length)return;const target=candidates[Math.floor(Math.random()*candidates.length)];target.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});toast('A little page, chosen at random: '+pageTitle(target))});
+  // Persist the last reading location and offer a deliberate resume (never jump unexpectedly on load).
+  let saveQueued=false;function remember(){if(saveQueued)return;saveQueued=true;requestAnimationFrame(()=>{const sec=currentSection();if(sec){state.lastId=sec.id;state.lastY=scrollY;persist()}saveQueued=false})}
+  addEventListener('scroll',remember,{passive:true});addEventListener('pagehide',remember);
+  $('#resumeReading')?.addEventListener('click',()=>{if(state.lastId&&$('#'+CSS.escape(state.lastId))){$('#'+CSS.escape(state.lastId)).scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});toast('Back to where you left our story.')}else toast('Your reading place will be saved as you explore.')});
+  // Restore an unfinished reply draft locally, without sending it anywhere.
+  const reply=$('#replyMessage');if(reply){try{reply.value=localStorage.getItem('affection-reply-draft')||''}catch(e){}reply.addEventListener('input',()=>{try{localStorage.setItem('affection-reply-draft',reply.value)}catch(e){}})}
+  // A small, respectful reading-time label for long letters.
+  $$('.page-two-wrap').forEach(sec=>{const text=(sec.innerText||'').trim();if(text.length<450)return;const mins=Math.max(1,Math.round(text.split(/\s+/).length/180));const kicker=sec.querySelector('.page54-kicker,.page53-kicker,.page52-kicker,.chapter-kicker');if(kicker&&!kicker.querySelector('.affection-readtime')){const label=document.createElement('span');label.className='affection-readtime';label.textContent='  ·  '+mins+' min read';label.style.cssText='font:10px Arial,sans-serif;letter-spacing:.08em;opacity:.62';kicker.appendChild(label)}});
+})();
+</script>
+
 </body>
 </html>
