@@ -865,7 +865,6 @@ body{padding-bottom:76px}
 body.reader-focus .chapter-nav,body.reader-focus .ribbon,body.reader-focus .music-toggle,body.reader-focus .reading-tools,body.reader-focus .affection-reader-dock{opacity:.18;transition:opacity .25s ease}
 body.reader-focus .chapter-nav:hover,body.reader-focus .ribbon:hover,body.reader-focus .affection-reader-dock:hover{opacity:1}
 body.reader-focus .page-two-wrap,body.reader-focus .preface-wrap{filter:none}
-body.reader-focus .page-two-wrap p,body.reader-focus .page-two-wrap .verse-quote,body.reader-focus .page-two-wrap .page54-poem{font-size:calc(1em * var(--reader-scale,1));line-height:1.95}
 /* Editorial consistency and chapter-family accents */
 .page-two-wrap{--chapter-accent:var(--wine);scroll-margin-top:28px}
 .page-two-wrap[data-chapter-type="poetry"]{--chapter-accent:#8a5962}
@@ -5731,10 +5730,31 @@ Bas dil se yeh lage</p>
   $('#savedWordsOpen')?.addEventListener('click',()=>{renderSaved();panel.hidden=false;$('.affection-panel-close',panel)?.focus()});
   $$('[data-close-saved]').forEach(b=>b.addEventListener('click',()=>{panel.hidden=true;$('#savedWordsOpen')?.focus()}));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panel&&!panel.hidden)panel.hidden=true});
-  // Focus mode and readable font scaling.
+  // Focus mode and readable font scaling. Scale the actual text styles on every book page,
+  // not just a few paragraphs while Focus mode is enabled. Keep each element's original size.
   const focus=$('#readerFocusToggle');focus?.addEventListener('click',()=>{const on=!document.body.classList.contains('reader-focus');document.body.classList.toggle('reader-focus',on);focus.setAttribute('aria-pressed',String(on));focus.querySelector('small').textContent=on?'Exit':'Focus';toast(on?'Distraction-free reading is on.':'Full book view restored.')});
-  function setScale(v){state.scale=Math.max(.9,Math.min(1.2,v));document.documentElement.style.setProperty('--reader-scale',state.scale);document.body.style.setProperty('--reader-scale',state.scale);persist()}
-  setScale(state.scale||1);$('#fontDown')?.addEventListener('click',()=>setScale((state.scale||1)-.05));$('#fontUp')?.addEventListener('click',()=>setScale((state.scale||1)+.05));
+  const scalableText=new Map();
+  function collectScalableText(){
+    $$('.page-two-wrap,.special-chapter,.final-letter-section').forEach(root=>{
+      const nodes=[root,...root.querySelectorAll('*')];
+      nodes.forEach(el=>{
+        if(el.matches('button,svg,path,script,style,.affection-page-actions,.affection-save-page,.affection-save-line,.affection-readtime'))return;
+        if(!scalableText.has(el)){const size=parseFloat(getComputedStyle(el).fontSize);if(Number.isFinite(size))scalableText.set(el,size)}
+      });
+    });
+  }
+  function setScale(v){
+    state.scale=Math.max(.8,Math.min(1.5,Math.round(v*100)/100));
+    collectScalableText();
+    scalableText.forEach((base,el)=>{if(el.isConnected)el.style.setProperty('font-size',(base*state.scale)+'px','important')});
+    document.documentElement.style.setProperty('--reader-scale',state.scale);
+    document.body.style.setProperty('--reader-scale',state.scale);
+    persist();
+    toast('Reading text: '+Math.round(state.scale*100)+'%');
+  }
+  setScale(state.scale||1);
+  $('#fontDown')?.addEventListener('click',()=>setScale((state.scale||1)-.1));
+  $('#fontUp')?.addEventListener('click',()=>setScale((state.scale||1)+.1));
   // Random letter, avoiding utility sections and the cover.
   $('#randomPage')?.addEventListener('click',()=>{const candidates=$$('.page-two-wrap[id],.special-chapter[id],.final-letter-section[id]').filter(x=>!['writeBack'].includes(x.id));if(!candidates.length)return;const target=candidates[Math.floor(Math.random()*candidates.length)];target.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});toast('A little page, chosen at random: '+pageTitle(target))});
   // Persist the last reading location and offer a deliberate resume (never jump unexpectedly on load).
